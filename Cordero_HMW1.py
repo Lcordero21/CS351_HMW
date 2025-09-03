@@ -1,6 +1,6 @@
 import time
 import random
-#import matplotlib
+import matplotlib.pyplot as plt
 
 def time_algorithm(algo, arr):
     start = time.time()
@@ -11,9 +11,13 @@ def time_algorithm(algo, arr):
 # Starter code
 def selection_sort(arr):
     new_array = arr
-    for i in range(len(array)):
-        pass
-    pass
+    for i in range(len(new_array)):
+        minimum =i
+        for m in range (i+1,len(new_array)):
+            if new_array[m] < new_array [minimum]:
+                minimum = m
+        new_array [i], new_array [minimum] = new_array [minimum], new_array [i]
+    return new_array
 
 def merge_sort(arr):
     A = split(arr)[0]
@@ -59,10 +63,15 @@ def make_array(n):
     final_array = random.sample(range(1,n+1),n)
     return(final_array)
 
-def start(input):
+def start(n):
     #loop each array and start timer
+    for i in range (len(n)):
+        pass
 
-    pass
-array = make_array(12)
+
+array = make_array(10)
 print(array)
 print(merge_sort(array))
+
+print(array)
+print(selection_sort(array))

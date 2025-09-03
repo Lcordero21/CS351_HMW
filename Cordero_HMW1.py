@@ -1,5 +1,6 @@
 import time
 import random
+#import matplotlib
 
 def time_algorithm(algo, arr):
     start = time.time()
@@ -54,14 +55,14 @@ def merge(C, D):
         return B
 
 def make_array(n):
-    random.seed(421)
+    random.seed(42)
     final_array = random.sample(range(1,n+1),n)
     return(final_array)
 
-def start():
+def start(input):
     #loop each array and start timer
 
     pass
-array = make_array(10)
+array = make_array(12)
 print(array)
 print(merge_sort(array))

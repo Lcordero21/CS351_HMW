@@ -1,8 +1,12 @@
 import time
 import random
 import matplotlib.pyplot as plt
+import statistics
+
+
 
 def time_algorithm(algo, arr):
+    """"""
     start = time.time()
     algo(arr.copy())
     return time.time() - start
@@ -34,8 +38,6 @@ def merge_sort(arr):
        D = merge_sort (B)
     return merge(C,D)
     
-       
-
 def split(arr):
     half_point = len(arr)//2
     return [arr[0:half_point],arr[half_point:len(arr)]]
@@ -63,15 +65,25 @@ def make_array(n):
     final_array = random.sample(range(1,n+1),n)
     return(final_array)
 
-def start(n):
-    #loop each array and start timer
+def run(n):
+    selection_med = []
+    merge_med = []
     for i in range (len(n)):
-        pass
+        array = make_array(n[i])
+        
+        for j in range (5):
+            temp_array1 = []
+            temp_array1.append(time_algorithm(selection_sort,array))
+        selection_med.append(statistics.median(temp_array1))
+
+        for k in range (5):
+            temp_array2 = []
+            temp_array2.append(time_algorithm(merge_sort, array))
+        merge_med.append(statistics.median(temp_array2))
+
+    print("Selection Sort Median Time", selection_med)
+    print ("Merge Sort Median Time", merge_med)
 
 
-array = make_array(10)
-print(array)
-print(merge_sort(array))
 
-print(array)
-print(selection_sort(array))
+run([100, 500, 1000, 5000])

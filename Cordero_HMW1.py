@@ -1,5 +1,6 @@
 import time
 import random
+
 def time_algorithm(algo, arr):
     start = time.time()
     algo(arr.copy())

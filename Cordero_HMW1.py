@@ -6,7 +6,6 @@ import statistics
 
 
 def time_algorithm(algo, arr):
-    """"""
     start = time.time()
     algo(arr.copy())
     return time.time() - start
@@ -83,7 +82,25 @@ def run(n):
 
     print("Selection Sort Median Time", selection_med)
     print ("Merge Sort Median Time", merge_med)
+    return(selection_med,merge_med)
 
 
+default_lengths=[100,500,750,1000,5000]
+selection_times, merge_times = run(default_lengths)
 
-run([100, 500, 1000, 5000])
+#plots
+
+plt.plot(default_lengths, selection_times, label = "Selection Sort", marker="*")
+plt.plot(default_lengths,merge_times, label = "Merge Sort", marker = "*")
+plt.legend()
+plt.xlabel("N Value")
+plt.ylabel("Median Run Times in Seconds")
+plt.title("Linear Graph of N vs Run Times")
+
+plt.savefig("Linear Graph_HMW1.png")
+
+plt.xscale("log")
+plt.yscale("log")
+plt.title("Log-Log Graph of N vs Run Times")
+plt.savefig("Log-Log Graph_HMW1.png")
+

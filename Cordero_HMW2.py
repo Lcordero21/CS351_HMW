@@ -6,8 +6,14 @@ import matplotlib.pyplot as plt
 
 def time_algorithm(algo, arr, target):
     """
-    Input: Algorithm, Array
+    Input: Algorithm, Array, Target Value
+
     Output: Time
+
+    Purpose:
+    To time the time taken to execute the algorithm in seconds by taking the time of the device when the algorithm
+    is started to the time of the device when the algorithm finishes. It returns the difference of the two to get the 
+    execution time.
     """
     start = time.time()
     algo(arr.copy(),target)
@@ -16,8 +22,19 @@ def time_algorithm(algo, arr, target):
 def make_array(n):
     """
     Input: Integer
+
     Output: Array
+
+    Purpose: 
+    Makes an random, unsorted array of the inputted length. There are duplicates, I will talk more about why
+    in the report.
+
+    Error:
+    TypeError if n is not an integer
     """
+    if type(n) != int:
+        raise TypeError ("Please input an integer")
+
     final_array = []
     random.seed(random.randint(0,50))
     for num in range (n):
@@ -27,14 +44,34 @@ def make_array(n):
 def three_sum(arr, target):
     """
     Input: Array and Target Value 
+
     Output: Boolean
+
+    Purpose:
+    Utilizing nested loops, this is a brute force method of seeing if any three integers in the given array adds
+    up to the target. The function accounts for arrays
+
+    Errors:
+    I have included a couple of errors that would arise for various cases (such as a TypeError if someone tries to
+    input anything but a list/array, a KeyError if the sum target is less than 1, and an IndexError if the length of
+    the array is less than 3). 
+
+    Limitations:
+    While the algorithm records and prints the count of how many loop operations it does, and returns the count, I do 
+    have to admit that I don't properly use the count in my overall analysis. Later in my code, I manually inputted 
+    the count of one of my runs (after doing a bunch of test runs), I have chosen not to adjust my code to do this 
+    for me, because I nearly ran out of time by the time I noticed...
     """
-    
+
     n = len(arr)-2
     count = 0
-
-    if len(arr) < 3:
+    if type(arr) != list:
+        raise TypeError("Please input an array.")
+    if target < 1:
+        raise KeyError("Target is too small, must be greater than -1.")
         return False
+    if len(arr) < 3:
+        raise IndexError("Length of array must be greater than 2.")
     
     for i in range(n):
         for j in range(i + 1, n):
@@ -46,39 +83,59 @@ def three_sum(arr, target):
     print("Length of Array", n+2,count, False)
     return count
 
-def run(n):
+def run(n,target):
     """
     Input: Array
-    Output: Lots of stuff
+
+    Output: Three-Sum Algorithm Median Times per n
+
+    Purpose: 
+    To run the program itself. This creates an array, starts the timer, and runs the algorithm a set 
+    number of times.
+
+    Errors:
+    TypeError arises if the type of n is not an array, if the target is not an integer,
+    and if the type of a specific index of n is not an integer.
     """
+    if type(n) != list:
+        raise TypeError
+    
+    if type(target) != int:
+        raise TypeError
+
     three_sum_med = []
     for i in range (len(n)):
+        if type(i) != int:
+            raise TypeError
         for j in range (10):
             array = make_array(n[i])
             temp_array1 = []
-            temp_array1.append(time_algorithm(three_sum,array,52))
+            temp_array1.append(time_algorithm(three_sum,array,target))
         three_sum_med.append(statistics.median(temp_array1))
     print("Three Sum Median Time", three_sum_med)
     return(three_sum_med)
 
 default_lengths = [50,100,200,400,800]
-med_time= run(default_lengths)
+med_time= run(default_lengths,5)
 
-#Ignore how impractical this is, but I really don't want to write more code. So I'm just inputting the count from one of my runs.
+#Ignore how impractical this is, but I really don't want to write more code. 
+#So I'm just inputting the count from one of my runs where the target was 52.
 med_count = [statistics.median([12,64,46,202,126,292,46,202,126,292]),statistics.median([6219,6732,9596,10081,587,22360,9596,10081,587,22360]),statistics.median([76461,17493,327,58292,2133,415,39338,95983,58689,60131]),statistics.median([586400,157015,157015,157015,157015,157015,157015,157015,157015,157015]),statistics.median([1028452,3573990,649485,5593380,10066125,2209630,5946425,16297971,87323,688494])]
 
-plt.plot(default_lengths, med_time, marker="*")
-plt.xlabel("N Value")
-plt.ylabel("Median Run Times in Seconds")
-plt.title("Three-Sum: Linear Graph of N vs Run Times")
-plt.show()
+def plot():
+    plt.plot(default_lengths, med_time, marker="*")
+    plt.xlabel("N Value")
+    plt.ylabel("Median Run Times in Seconds")
+    plt.title("Three-Sum: Linear Graph of N vs Run Times")
+    plt.show()
 
-plt.plot(default_lengths, med_count, marker = "*")
-plt.xlabel("N Value")
-plt.ylabel ("Median Operation Counts")
-plt.title("Three-Sum: Linear Graph of N vs Operation Count")
-plt.show()
+    plt.plot(default_lengths, med_count, marker = "*")
+    plt.xlabel("N Value")
+    plt.ylabel ("Median Operation Counts")
+    plt.title("Three-Sum: Linear Graph of N vs Operation Count")
+    plt.show()  
 
+plot()
 
 
 

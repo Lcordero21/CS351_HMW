@@ -120,7 +120,8 @@ def run(n,target):
     return(three_sum_med,count_med)
 
 default_lengths = [50,100,200,400,800]
-med_time,med_count= run(default_lengths,52)
+target = 52
+med_time,med_count= run(default_lengths,target)
 
 print("Median Count", med_count)
 def plot():

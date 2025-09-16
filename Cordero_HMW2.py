@@ -4,6 +4,8 @@ import numpy as np
 import statistics
 import matplotlib.pyplot as plt
 
+temp_array_med_count = []
+
 def time_algorithm(algo, arr, target):
     """
     Input: Algorithm, Array, Target Value
@@ -16,7 +18,7 @@ def time_algorithm(algo, arr, target):
     execution time.
     """
     start = time.time()
-    algo(arr.copy(),target)
+    temp_array_med_count.append(algo(arr.copy(),target))
     return time.time() - start
 
 def make_array(n):
@@ -102,34 +104,60 @@ def run(n,target):
     
     if type(target) != int:
         raise TypeError
-
+    count_med = []
     three_sum_med = []
     for i in range (len(n)):
+
         if type(i) != int:
             raise TypeError
         for j in range (10):
             array = make_array(n[i])
             temp_array1 = []
             temp_array1.append(time_algorithm(three_sum,array,target))
+        count_med.append(statistics.median(temp_array_med_count))
         three_sum_med.append(statistics.median(temp_array1))
     print("Three Sum Median Time", three_sum_med)
-    return(three_sum_med)
+    return(three_sum_med,count_med)
 
 default_lengths = [50,100,200,400,800]
-med_time= run(default_lengths,5)
+med_time,med_count= run(default_lengths,52)
 
 #Ignore how impractical this is, but I really don't want to write more code. 
 #So I'm just inputting the count from one of my runs where the target was 52.
-med_count = [statistics.median([12,64,46,202,126,292,46,202,126,292]),statistics.median([6219,6732,9596,10081,587,22360,9596,10081,587,22360]),statistics.median([76461,17493,327,58292,2133,415,39338,95983,58689,60131]),statistics.median([586400,157015,157015,157015,157015,157015,157015,157015,157015,157015]),statistics.median([1028452,3573990,649485,5593380,10066125,2209630,5946425,16297971,87323,688494])]
-
+#med_count = [statistics.median([12,64,46,202,126,292,46,202,126,292]),statistics.median([6219,6732,9596,10081,587,22360,9596,10081,587,22360]),statistics.median([76461,17493,327,58292,2133,415,39338,95983,58689,60131]),statistics.median([586400,157015,157015,157015,157015,157015,157015,157015,157015,157015]),statistics.median([1028452,3573990,649485,5593380,10066125,2209630,5946425,16297971,87323,688494])]
+print("Median Count", med_count)
 def plot():
-    plt.plot(default_lengths, med_time, marker="*")
+    """
+    Input: None
+
+    Output: None
+
+    Purpose: 
+    Makes the graphs I need for my report. I calculated the theoretical growth by 
+    making the next value 8 times slower than the previous (with the first value being the actual 1st 
+    measurement)
+    """
+    theory_time = []
+    theory_time.append(med_time[0])
+
+    theory_count = []
+    theory_count.append(med_count[0])
+
+    for i in range (len(default_lengths)-1):
+        theory_time.append(theory_time[i]*8)
+        theory_count.append(theory_count[i]*8)
+
+    print ("Theory stuff:", theory_time, theory_count)
+
+    plt.plot(default_lengths, med_time, label="Actual", marker="*")
+    plt.plot(default_lengths, theory_time, label = "Theoretical", marker = "*")
     plt.xlabel("N Value")
     plt.ylabel("Median Run Times in Seconds")
     plt.title("Three-Sum: Linear Graph of N vs Run Times")
     plt.show()
 
-    plt.plot(default_lengths, med_count, marker = "*")
+    plt.plot(default_lengths, med_count, label = "Actual", marker = "*")
+    plt.plot(default_lengths, theory_count, label = "Theoretical", marker = "*")
     plt.xlabel("N Value")
     plt.ylabel ("Median Operation Counts")
     plt.title("Three-Sum: Linear Graph of N vs Operation Count")

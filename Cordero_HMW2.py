@@ -122,9 +122,6 @@ def run(n,target):
 default_lengths = [50,100,200,400,800]
 med_time,med_count= run(default_lengths,52)
 
-#Ignore how impractical this is, but I really don't want to write more code. 
-#So I'm just inputting the count from one of my runs where the target was 52.
-#med_count = [statistics.median([12,64,46,202,126,292,46,202,126,292]),statistics.median([6219,6732,9596,10081,587,22360,9596,10081,587,22360]),statistics.median([76461,17493,327,58292,2133,415,39338,95983,58689,60131]),statistics.median([586400,157015,157015,157015,157015,157015,157015,157015,157015,157015]),statistics.median([1028452,3573990,649485,5593380,10066125,2209630,5946425,16297971,87323,688494])]
 print("Median Count", med_count)
 def plot():
     """
@@ -151,6 +148,7 @@ def plot():
 
     plt.plot(default_lengths, med_time, label="Actual", marker="*")
     plt.plot(default_lengths, theory_time, label = "Theoretical", marker = "*")
+    plt.legend()
     plt.xlabel("N Value")
     plt.ylabel("Median Run Times in Seconds")
     plt.title("Three-Sum: Linear Graph of N vs Run Times")
@@ -158,6 +156,7 @@ def plot():
 
     plt.plot(default_lengths, med_count, label = "Actual", marker = "*")
     plt.plot(default_lengths, theory_count, label = "Theoretical", marker = "*")
+    plt.legend()
     plt.xlabel("N Value")
     plt.ylabel ("Median Operation Counts")
     plt.title("Three-Sum: Linear Graph of N vs Operation Count")

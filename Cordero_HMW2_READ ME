@@ -1,0 +1,4 @@
+This will be extremely short, but in order to run the code (and run your own target) you have to adjust lines 122 and 123.
+Line 122 is a list of array lengths (if you would like to adjust those) and Line 123 is where you can adjust the target. For the most part, there 
+should be nothing else that needs adjusting, just those two! Just keep an eye out for any error messages I implemented and what each function 
+takes as an input (if you really decide to change things)

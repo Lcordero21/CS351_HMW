@@ -1,0 +1,26 @@
+DFS
+
+Starting Node: Salem
+Final Path:
+['Salem', 
+'Corvallis', 
+'Newport', 
+'Florence', 
+'Coos_Bay', 
+'Roseburg', 
+'Medford', 
+'Crater_Lake', 
+'Eugene', 
+'Bend', 
+'Burns', 
+'Redmond', 
+'Madras', 
+'The_Dalles', 
+'Pendleton', 
+'Ontario', 
+'Hood_River', 
+'Portland', 
+'Astoria', 
+'Seaside', 
+'Tillamook', 
+'Ashland']

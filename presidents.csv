@@ -1,0 +1,69 @@
+id,year,president,party,annual_debt_inc_pct
+0,1949,Harry S. Truman,Democratic,0.2
+1,1950,Harry S. Truman,Democratic,1.8
+2,1951,Harry S. Truman,Democratic,-0.8
+3,1952,Harry S. Truman,Democratic,1.5
+4,1953,Dwight D. Eisenhower,Republican,2.7
+5,1954,Dwight D. Eisenhower,Republican,2.0
+6,1955,Dwight D. Eisenhower,Republican,1.1
+7,1956,Dwight D. Eisenhower,republican,-0.6
+8,1957,Dwight D. Eisenhower,Republican,-0.8
+9,1958,Dwight D. Eisenhower,Republican,2.1
+10,1959,Dwight D. Eisenhower,Republican,3.0
+11,1960,Dwight D. Eisenhower,Republican,0.6
+12,1961,John F. Kennedy,Democratic,0.9
+13,1962,John F. Kennedy,Democratic,3.2
+14,1963,John F. Kennedy,Democratic,2.6
+15,1964,Lyndon B. Johnson,Democratic,1.9
+16,1965,Lyndon B. Johnson,Democratic,1.8
+17,1966,Lyndon B. Johnson,Democratic,0.8
+18,1968,Lyndon B. Johnson,Democratic,2.0
+19,1968,Lyndon B. Johnson,Democratic,6.5
+20,,Richard Nixon,Republican,1.8
+21,1970,Richard Nixon,Republican,4.9
+22,1971,Richard Nixon,Republican,7.3
+23,1972,Richard Nixon,Republican,7.3
+24,1973,Richard Nixon,Republican,7.2
+25,1974,Gerald Ford,republican,3.7
+26,1975,Gerald Ford,republican,12.2
+27,1976,Gerald Ford,republican,16.4
+28,1877,Jimmy Carter,Democratic,12.6
+29,1978,Jimmy Carter,Democratic,10.4
+30,1979,Jimmy Carter,Democratic,7.1
+31,1980,Jimmy Carter,Democratic,9.8
+32,1981,Ronald Reagan,,9.9
+33,1982,Ronald Reagan,,14.4
+34,1983,Ronald Reagan,,20.6
+35,1984,Ronald Reagan,,14.2
+36,1985,Ronald Reagan,,16.0
+37,1986,Ronald Reagan,,16.6
+38,1987,Ronald Reagan,,10.6
+39,1988,Ronald Reagan,,10.7
+40,1989,George HW Bush,Republican,9.8
+41,1990,George H. W. Bush,Republican,13.2
+42,1991,George H W Bush,Republican,13.4
+43,1992,George H. W. Bush,Republican,10.9
+44,1993,Bill Clinton,Democratic,8.5
+45,1994,Bill Clinton,Democratic,6.4
+46,1995,Bill Clinton,Democratic,6.0
+47,1996,Bill Clinton,Democratic,5.0
+48,1997,Bill Clinton,Democratic,3.6
+49,1998,Bill Clinton,Democratic,2.1
+50,1999,Bill Clinton,Democratic,2.4
+51,2000,Bill Clinton,Democratic,0.3
+52,2001,George W. Bush,Republican,2.3
+53,2002,George W. Bush,Republican,7.2
+54,2003,George W. Bush,Republican,8.9
+55,2004,George W. Bush,Republican,8.8
+56,2005,George W. Bush,Republican,7.5
+57,2006,George W. Bush,Republican,7.2
+58,2007,George W. Bush,republican,5.9
+59,2008,George W. Bush,republican,11.3
+60,2009,Barack Obama,Democratic,18.8
+61,2010,Barack Obama,Democratic,13.9
+62,2011,Barack Obama,Democratic,9.1
+63,2012,Barack Obama,Democratic,8.6
+64,2013,Barack Obama,Democratic,4.2
+65,2014,Barack Obama,Democratic,6.5
+66,2015,Barack Obama,Democratic,1.8
+67,2016,Barack Obamabama,Democratic,3.7

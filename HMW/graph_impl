@@ -1,0 +1,5 @@
+class Graph (IGraph):
+    def __init__(self):
+        self._vertices = []
+
+TypeVar('V') V = pass

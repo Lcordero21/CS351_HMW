@@ -1,0 +1,26 @@
+BFS
+
+Starting Node: Salem
+Final Path:
+['Salem', 
+'Portland', 
+'Eugene', 
+'Corvallis', 
+'Astoria', 
+'Hood_River', 
+'Newport', 
+'Bend', 
+'Crater_Lake', 
+'Roseburg', 
+'Seaside', 
+'The_Dalles', 
+'Tillamook', 
+'Florence', 
+'Redmond', 
+'Burns', 
+'Medford', 
+'Coos_Bay', 
+'Pendleton', 
+'Madras', 
+'Ashland', 
+'Ontario']
